@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tai Chi | Java Web Lab - UTE 🚀</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col items-center justify-center font-sans p-4">
+
+<!-- Card Trang Chủ -->
+<div class="max-w-md w-full bg-slate-900/80 border border-slate-800 rounded-2xl p-6 shadow-2xl backdrop-blur-md text-center relative overflow-hidden">
+
+    <!-- Header Profile -->
+    <div class="flex flex-col items-center">
+        <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 p-1 mb-3 shadow-lg shadow-cyan-500/20">
+            <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center font-bold text-2xl text-cyan-400 border border-slate-800">
+                TC
+            </div>
+        </div>
+
+        <h1 class="text-2xl font-black tracking-tight text-white">
+            Tai Chi <span class="text-cyan-400">.dev</span>
+        </h1>
+
+        <!-- Badge Sinh Vien UTE -->
+        <div class="flex items-center gap-1.5 mt-1.5 px-3 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 text-xs font-medium">
+            <span>🎓</span>
+            <span>Sinh viên CNTT - Trường ĐH SPKT TP.HCM (UTE)</span>
+        </div>
+    </div>
+
+    <!-- Status Server -->
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs my-4">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        Tomcat 10 + JDK 21 (Render Free)
+    </div>
+
+    <p class="text-slate-400 text-xs italic">
+        "Nơi lưu trữ & chạy demo các bài tập Lập Trình Web."
+    </p>
+
+    <!-- Danh sách bài tập -->
+    <div class="mt-5 space-y-2.5">
+        <a href="/bt1/" class="block p-3 rounded-xl bg-slate-800/60 border border-slate-700/50 hover:border-cyan-500 hover:bg-slate-800/90 transition-all text-left group">
+            <div class="flex items-center justify-between">
+                <span class="font-semibold text-slate-200 group-hover:text-cyan-400 text-sm">📦 Bài Tập 1</span>
+                <span class="text-xs text-slate-500 group-hover:text-cyan-400">/bt1/ ➔</span>
+            </div>
+            <p class="text-xs text-slate-400 mt-0.5">Servlet / JSP Cơ bản</p>
+        </a>
+
+        <a href="/bt2/" class="block p-3 rounded-xl bg-slate-800/60 border border-slate-700/50 hover:border-blue-500 hover:bg-slate-800/90 transition-all text-left group">
+            <div class="flex items-center justify-between">
+                <span class="font-semibold text-slate-200 group-hover:text-blue-400 text-sm">🚀 Bài Tập 2</span>
+                <span class="text-xs text-slate-500 group-hover:text-blue-400">/bt2/ ➔</span>
+            </div>
+            <p class="text-xs text-slate-400 mt-0.5">Jakarta Servlet 6.1 + Maven</p>
+        </a>
+    </div>
+
+    <!-- Nút giải trí Easter Egg -->
+    <div class="mt-5 pt-4 border-t border-slate-800/80">
+        <button onclick="buffDiem()" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 text-white font-medium shadow-lg hover:opacity-90 active:scale-95 transition-all text-xs">
+            🎉 Phím Tăng Điểm Giữa Kỳ UTE
+        </button>
+        <p id="counter" class="text-xs text-slate-500 mt-2">Đã cộng: <span class="text-rose-400 font-bold">0</span> điểm qua môn</p>
+    </div>
+
+</div>
+
+<!-- Script bắn pháo hoa -->
+<script>
+    let score = 0;
+    function buffDiem() {
+        score += 0.5;
+        document.querySelector('#counter span').innerText = score + 'd';
+        confetti({
+            particleCount: 35,
+            spread: 50,
+            origin: { y: 0.8 }
+        });
+    }
+</script>
+</body>
+</html>
