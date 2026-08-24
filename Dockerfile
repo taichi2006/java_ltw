@@ -1,9 +1,11 @@
-FROM tomcat:9.0-jdk11-corretto
+FROM tomcat:10.1-jdk21-temurin
 
-# Xóa các ứng dụng mặc định của Tomcat cho nhẹ
+ENV JAVA_OPTS="-Xms128m -Xmx384m"
+
+# Xóa ứng dụng mặc định
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copy tất cả các file .war trong thư mục webapps ở máy bạn vào Tomcat
+# Copy toàn bộ file WAR vào Tomcat
 COPY webapps/ /usr/local/tomcat/webapps/
 
 EXPOSE 8080
