@@ -1,3 +1,17 @@
-git add .
-git commit -m "add github actions"
-git push
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Test
+        run: echo "GitHub Actions is working!"
